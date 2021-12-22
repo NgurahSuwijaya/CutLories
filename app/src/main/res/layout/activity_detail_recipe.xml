@@ -23,28 +23,28 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="30dp"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Resep : "
                         android:fontFamily="@font/g_bold"
-                        android:textSize="25dp"
-                        android:textColor="#FFC107"/>
+                        android:text="Resep : "
+                        android:textColor="#FFC107"
+                        android:textSize="25dp" />
 
                     <TextView
                         android:id="@+id/t1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nama Makanan"
                         android:fontFamily="@font/g_bold"
-                        android:textSize="25dp"
-                        android:textColor="#402B00"/>
+                        android:text="Nama Makanan"
+                        android:textColor="#402B00"
+                        android:textSize="25dp" />
 
                 </LinearLayout>
 
@@ -52,8 +52,8 @@
                     android:id="@+id/img1"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_marginBottom="30dp"/>
+                    android:layout_marginBottom="30dp"
+                    android:src="@mipmap/ic_launcher" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -63,19 +63,19 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jumlah Kalori : "
                         android:fontFamily="@font/g_light"
-                        android:textSize="15sp"
-                        android:textColor="#000"/>
+                        android:text="Jumlah Kalori : "
+                        android:textColor="#000"
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/t2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="kkal"
                         android:fontFamily="@font/g_light"
-                        android:textSize="15dp"
-                        android:textColor="#000"/>
+                        android:text="kkal"
+                        android:textColor="#000"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -89,77 +89,104 @@
                         android:layout_width="19dp"
                         android:layout_height="19dp"
                         android:layout_alignParentLeft="true"
-                        android:src="@drawable/ic_waktu"/>
+                        android:src="@drawable/ic_waktu" />
 
                     <TextView
                         android:id="@+id/t3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_toRightOf="@id/t3img"
                         android:layout_marginLeft="5dp"
-                        android:text="waktu"
+                        android:layout_toRightOf="@id/t3img"
                         android:fontFamily="@font/g_light"
-                        android:textSize="15sp"
-                        android:textColor="#000"/>
+                        android:text="waktu"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
 
                     <ImageView
                         android:id="@+id/t4img"
                         android:layout_width="19dp"
                         android:layout_height="19dp"
+                        android:layout_below="@id/t3img"
                         android:layout_alignParentLeft="true"
-                        android:src="@drawable/ic_sajian"
-                        android:layout_below="@id/t3img"/>
+                        android:src="@drawable/ic_sajian" />
 
                     <TextView
                         android:id="@+id/t4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_below="@id/t3"
-                        android:layout_toRightOf="@id/t4img"
                         android:layout_marginLeft="5dp"
-                        android:text="sajian"
+                        android:layout_toRightOf="@id/t4img"
                         android:fontFamily="@font/g_light"
-                        android:textSize="15sp"
-                        android:textColor="#000"/>
+                        android:text="sajian"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
 
                 </RelativeLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Alat dan Bahan :"
                     android:fontFamily="@font/g_light"
-                    android:textSize="18sp"
-                    android:textColor="#FFC107"/>
+                    android:text="Alat dan Bahan :"
+                    android:textColor="#FFC107"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/ab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
-                    android:text="alat bahan"
                     android:fontFamily="@font/g_light"
-                    android:textSize="15sp"
-                    android:textColor="#000"/>
+                    android:text="alat bahan"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:text="Cara Memasak :"
                     android:fontFamily="@font/g_light"
-                    android:textSize="18sp"
-                    android:textColor="#FFC107" />
+                    android:text="Cara Memasak :"
+                    android:textColor="#FFC107"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/cm"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
-                    android:text="cara masak"
                     android:fontFamily="@font/g_light"
-                    android:textSize="15sp"
-                    android:textColor="#000"/>
+                    android:text="cara masak"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/updateBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#ffc857"
+                        android:text="Update"
+                        app:cornerRadius="10dp" />
+
+                    <Button
+                        android:id="@+id/deleteBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#F07167"
+                        android:text="Delete"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
 
             </LinearLayout>
 

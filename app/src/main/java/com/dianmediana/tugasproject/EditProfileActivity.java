@@ -58,6 +58,7 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+        getSupportActionBar().hide();
         progressDialog = new ProgressDialog(this);
         userPref = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
         textViewNameProfile = findViewById(R.id.textViewNameProfile);

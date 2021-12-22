@@ -60,33 +60,28 @@
         </ScrollView>
 
     </LinearLayout>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/ic_addddd"-->
+<!--        app:layout_anchor="@id/viewA"-->
+<!--        app:layout_anchorGravity="bottom|right|end"/>-->
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:src="@drawable/ic_addddd"
+        android:focusable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/ic_addddd"
         app:layout_anchor="@id/viewA"
         app:layout_anchorGravity="bottom|right|end"/>
-
-    <!--        <View-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="0.7dp"-->
-    <!--            android:layout_below="@id/toolbar"-->
-    <!--            android:background="#000000" />-->
-
-    <!--        <EditText-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginTop="10dp"-->
-    <!--            android:id="@+id/searchAction"-->
-    <!--            android:hint="Search..."-->
-    <!--            android:layout_below="@id/toolbar"-->
-    <!--            android:background="@drawable/bg_form"-->
-    <!--            android:drawableRight="@drawable/ic_search"-->
-    <!--            android:paddingLeft="10dp"-->
-    <!--            android:paddingRight="10dp"-->
-    <!--            android:inputType="textPersonName"/>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
