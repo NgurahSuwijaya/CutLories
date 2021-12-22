@@ -45,11 +45,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + table_users);
     }
 
-    public void insertUsers(ContentValues values){
-        db.insert(table_users, null, values);
-    }
-
-    public static void insertRecipes(ContentValues values){
+    public static void insertUsers(ContentValues values){
         db.insert(table_users, null, values);
     }
 
@@ -63,6 +59,7 @@ public class DbHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
     void updateData(String row_id, String quest, String role, String status){
         ContentValues cv = new ContentValues();
 //        cv.put(row_quest, quest);
@@ -88,6 +85,5 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         //deleting rows
         db.delete(table_users, null, null);
-        db.close();
     }
 }

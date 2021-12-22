@@ -169,7 +169,6 @@ public class RegisterActivity extends AppCompatActivity{
                     editor.putString("token",object.getString("token"));
                     editor.putString("id",user.getString("id"));
                     editor.putBoolean("isLoggedIn", true);
-                    editor.apply();
 
                     db.deleteAll();
                     ContentValues values = new ContentValues();
@@ -181,6 +180,7 @@ public class RegisterActivity extends AppCompatActivity{
                     values.put(DbHelper.row_weight, user.getString("bodyWeight"));
                     values.put(DbHelper.row_body, user.getString("partOfDreamBody"));
                     db.insertUsers(values);
+                    editor.apply();
 
                     Toast.makeText(RegisterActivity.this, "Register success.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this, MainActivity.class);

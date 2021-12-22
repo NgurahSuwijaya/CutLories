@@ -58,6 +58,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private ImageButton imageButtonHitung;
     private Button buttonEdit;
+    private TextView name, email;
+    SharedPreferences userPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,13 +71,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         imageButtonHitung = view.findViewById(R.id.hitung);
+        name = view.findViewById(R.id.textViewNameProfile);
+        email = view.findViewById(R.id.textViewEmailProfile);
         buttonEdit = view.findViewById(R.id.cirChangeProfileButton);
         imageButtonHitung.setOnClickListener(this);
 
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(getContext().getApplicationContext(), EditProfileActivity.class);
                 startActivity(intent);
             }

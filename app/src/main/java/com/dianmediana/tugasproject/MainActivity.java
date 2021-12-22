@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(fragment);
             }
         });
-//      bottomNavigation.setCount(1,"10");
+
         bottomNavigation.show(1, true);
 
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
