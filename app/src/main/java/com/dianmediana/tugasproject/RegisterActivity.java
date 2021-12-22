@@ -2,6 +2,7 @@ package com.dianmediana.tugasproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +25,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.dianmediana.tugasproject.sqlite.DbHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity{
     private TextView seekMeter;
     private RadioGroup radioGender;
     private RadioButton radioMale, radioFemale;
+    DbHelper db;
     private Button btnLogin;
     private SeekBar seekBarAge;
     private CheckBox checkBoxTop, checkBoxMid, checkBoxBot;
@@ -46,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        db = new DbHelper(this);
         name = findViewById(R.id.editTextRegisterName);
         weight = findViewById(R.id.editTextRegisterWeight);
         height = findViewById(R.id.editTextRegisterHeight);
@@ -165,15 +168,19 @@ public class RegisterActivity extends AppCompatActivity{
                     SharedPreferences.Editor editor = userPref.edit();
                     editor.putString("token",object.getString("token"));
                     editor.putString("id",user.getString("id"));
-                    editor.putString("name",user.getString("name"));
-                    editor.putString("age",user.getString("age"));
-                    editor.putString("bodyHeight",user.getString("bodyHeight"));
-                    editor.putString("bodyWeight",user.getString("bodyWeight"));
-                    editor.putString("gender",user.getString("gender"));
-                    editor.putString("email",user.getString("email"));
-                    editor.putString("partOfDreamBody",user.getString("partOfDreamBody"));
                     editor.putBoolean("isLoggedIn", true);
                     editor.apply();
+
+                    db.deleteAll();
+                    ContentValues values = new ContentValues();
+                    values.put(DbHelper.row_name, user.getString("name"));
+                    values.put(DbHelper.row_age, user.getString("age"));
+                    values.put(DbHelper.row_gender, user.getString("gender"));
+                    values.put(DbHelper.row_email, user.getString("email"));
+                    values.put(DbHelper.row_height, user.getString("bodyHeight"));
+                    values.put(DbHelper.row_weight, user.getString("bodyWeight"));
+                    values.put(DbHelper.row_body, user.getString("partOfDreamBody"));
+                    db.insertUsers(values);
 
                     Toast.makeText(RegisterActivity.this, "Register success.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this, MainActivity.class);

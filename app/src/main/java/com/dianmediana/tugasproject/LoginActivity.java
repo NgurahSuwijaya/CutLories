@@ -2,6 +2,7 @@ package com.dianmediana.tugasproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.dianmediana.tugasproject.sqlite.DbHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +32,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity{
     public EditText email,password;
     public Button btnLogin;
+    DbHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +44,7 @@ public class LoginActivity extends AppCompatActivity{
         }
 
         setContentView(R.layout.activity_login);
-
+        db = new DbHelper(this);
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.cirLoginButton);
@@ -79,13 +82,18 @@ public class LoginActivity extends AppCompatActivity{
                     SharedPreferences.Editor editor = userPref.edit();
                     editor.putString("token",object.getString("token"));
                     editor.putString("id",user.getString("id"));
-                    editor.putString("name",user.getString("name"));
-                    editor.putString("age",user.getString("age"));
-                    editor.putString("bodyHeight",user.getString("bodyHeight"));
-                    editor.putString("bodyWeight",user.getString("bodyWeight"));
-                    editor.putString("gender",user.getString("gender"));
-                    editor.putString("email",user.getString("email"));
-                    editor.putString("partOfDreamBody",user.getString("partOfDreamBody"));
+                    db.deleteAll();
+                    ContentValues values = new ContentValues();
+                    values.put(DbHelper.row_name, user.getString("name"));
+                    values.put(DbHelper.row_age, user.getString("age"));
+                    values.put(DbHelper.row_gender, user.getString("gender"));
+                    values.put(DbHelper.row_email, user.getString("email"));
+                    values.put(DbHelper.row_height, user.getString("bodyHeight"));
+                    values.put(DbHelper.row_weight, user.getString("bodyWeight"));
+                    values.put(DbHelper.row_body, user.getString("partOfDreamBody"));
+
+                    db.insertUsers(values);
+
                     editor.putBoolean("isLoggedIn", true);
                     editor.apply();
 
