@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecommendationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/semibold"
+            android:text="Food Recommendations"
+            android:textColor="#FFC107"
+            android:textSize="25dp"
+            android:layout_marginLeft="5dp"/>
+
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:id="@+id/searchAction"-->
+<!--            android:hint="Search..."-->
+<!--            android:background="@drawable/bg_form"-->
+<!--            android:drawableRight="@drawable/ic_search"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:inputType="textPersonName"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"/>
+    </LinearLayout>
+
+</FrameLayout>

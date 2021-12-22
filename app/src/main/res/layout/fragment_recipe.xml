@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RecipeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/semibold"
+                android:text="Recipes \nFor You!"
+                android:textColor="#FFC107"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/poto"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:text="Menu Ideas"
+            android:textSize="15sp"
+            android:fontFamily="@font/semibold"
+            android:textColor="#402B00"/>
+
+        <GridLayout
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/breakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/breakfast"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/regular"
+                        android:text="Breakfast"
+                        android:textSize="16sp"
+                        android:textColor="#000"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/lunch"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/regular"
+                        android:text="Lunch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/dinner"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/regular"
+                        android:text="Dinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/supper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/supper"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"/>
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#000"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/regular"
+                        android:text="Supper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:text="Categories"
+            android:textSize="15sp"
+            android:fontFamily="@font/semibold"
+            android:textColor="#402B00"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/salads"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/salads"
+                    android:text="Appetizers and Salads" />
+
+                <ImageView
+                    android:id="@+id/main_dishes"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/main_dishes"
+                    android:text="Main Dishes" />
+
+                <ImageView
+                    android:id="@+id/soups"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/soups"
+                    android:text="Soups"/>
+
+                <ImageView
+                    android:id="@+id/desserts"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/desserts"
+                    android:text="Desserts"/>
+
+                <ImageView
+                    android:id="@+id/drinks"
+                    android:layout_width="250dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/drinks"
+                    android:text="Drinks"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="15dp"
+            android:text="IMT Categories"
+            android:textSize="15sp"
+            android:fontFamily="@font/semibold"
+            android:textColor="#402B00" />
+
+        <GridLayout
+            android:columnCount="1"
+            android:rowCount="4"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/kurus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:backgroundTint="#A8E10C">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:src="@drawable/kurus"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp" />
+
+                    <TextView
+                        android:id="@+id/kategori"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/g_bold"
+                        android:text="UNDERWEIGHT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/regular"
+                        android:text="IMT kurang dari 18,5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/kategori"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ideal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:backgroundTint="#8A6FDF">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:src="@drawable/ideal"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp" />
+
+                    <TextView
+                        android:id="@+id/kategori1"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/g_bold"
+                        android:text="IDEAL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/regular"
+                        android:text="IMT antara 18,5 dan 24,9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/kategori1"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/berisi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:backgroundTint="#FFDB15">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:src="@drawable/berisi"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="25dp" />
+
+                    <TextView
+                        android:id="@+id/kategori2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/g_bold"
+                        android:text="OVERWEIGHT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/regular"
+                        android:text="IMT antara 25 dan 29,9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/kategori2"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gemuk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:backgroundTint="#FF5765">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:src="@drawable/gemuk"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="25dp" />
+
+                    <TextView
+                        android:id="@+id/kategori3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/g_bold"
+                        android:text="OBESE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="35dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/regular"
+                        android:text="IMT di atas 30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/kategori3"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

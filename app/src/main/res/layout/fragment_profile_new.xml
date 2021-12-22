@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="NamespaceTypo"
+    tools:context=".user.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/whiteTextColor"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/frame"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/g_bold"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:text="User Pofile"
+                        android:textColor="#402B00"
+                        android:textSize="25sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="118dp"
+                        android:layout_height="103dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/poto" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewNameProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/g_bold"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:text="Dian Mediana"
+                            android:textColor="#402B00"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textViewEmailProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="@font/g_light"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:text="Dian@gmail.com"
+                            android:textColor="#402B00"
+                            android:textSize="12sp" />
+                        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                            android:id="@+id/cirChangeProfileButton"
+                            style="@style/loginButton"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:layout_marginBottom="10dp"
+                            android:text="Change Profile"
+                            app:initialCornerAngle="27dp"
+                            app:spinning_bar_color="#fff"
+                            app:spinning_bar_padding="6dp"
+                            app:spinning_bar_width="4dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/frame"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/hitungberat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/g_bold"
+                            android:text="Hitung Berat Ideal"
+                            android:textColor="#402B00"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:layout_width="210dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/hitungberat"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/g_light"
+                            android:text="Menghitung berat badan ideal dengan Indeks Massa Tubuh (IMT)"
+                            android:textSize="13dp" />
+
+                        <ImageButton
+                            android:id="@+id/hitung"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/ic_next"
+                            android:textColor="@color/themeColor" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</FrameLayout>

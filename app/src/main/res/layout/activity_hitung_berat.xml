@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".main.HitungBerat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hitung Berat Ideal"
+            android:fontFamily="@font/g_bold"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:textColor="#402B00"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menggunakan Indeks Massa Tubuh (IMT)"
+            android:fontFamily="@font/regular"
+            android:textSize="13sp"
+            android:layout_gravity="center"
+            android:textColor="@color/themeColor"/>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/bmi"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/frame_search"
+            android:layout_marginTop="20dp"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Berat Badan (kg)"
+                android:fontFamily="@font/g_light"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="7pt"
+                android:textColor="#000"/>
+
+            <EditText
+                android:id="@+id/edbb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="8pt"
+                android:inputType="numberDecimal"
+                android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/frame_search"
+            android:layout_marginTop="15dp"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tinggi Badan (cm)"
+                android:fontFamily="@font/g_light"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="7pt"
+                android:textColor="#000"/>
+
+            <EditText
+                android:id="@+id/edtinggi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="9pt"
+                android:inputType="numberDecimal"
+                android:text="" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bthitung"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="#FFC107"
+            android:fontFamily="@font/g_bold"
+            android:onClick="hitung"
+            android:text="Hitung IMT"
+            app:cornerRadius="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/frame_search"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Besar Indeks Massa Tubuh (IMT) :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/g_light"
+                android:textSize="7pt"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/edimt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:textSize="9pt"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="#000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#000000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/frame_search"
+            android:layout_marginTop="15dp"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keterangan :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:fontFamily="@font/g_light"
+                android:textSize="7pt"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/edket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:textSize="9pt"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textColor="#000"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#000000"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnrekomendasi"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="@font/g_bold"
+            android:onClick="rekomendasi"
+            android:text="Lihat Rekomendasi Makanan"
+            app:cornerRadius="10dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/bg_hitungbb"/>
+
+    </LinearLayout>
+
+</ScrollView>

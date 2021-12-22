@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailRecommendation">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="13dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/regular"
+                    android:text="Rekomendasi Makanan bagi Penderita"
+                    android:textSize="14sp"
+                    android:textColor="@color/themeColor"/>
+
+                <TextView
+                    android:id="@+id/judul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="Nama Penyakit"
+                    android:fontFamily="@font/g_bold"
+                    android:textSize="28dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#FFC107"/>
+
+                <ImageView
+                    android:id="@+id/gambar"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/awalan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/regular"
+                    android:text="awalan"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:justificationMode="inter_word"/>
+
+                <TextView
+                    android:id="@+id/rekomendasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/regular"
+                    android:text="rekomendasi"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:justificationMode="inter_word"/>
+
+                <TextView
+                    android:id="@+id/pantangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/regular"
+                    android:text="pantangan"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:justificationMode="inter_word"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

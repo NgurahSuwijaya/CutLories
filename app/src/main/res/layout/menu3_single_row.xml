@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:elevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/cardView">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/relative">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="This is Header Text"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:fontFamily="@font/g_bold"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:layout_below="@id/img1"/>
+
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Source"
+            android:layout_below="@id/t1"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="8dp"
+            android:textSize="13sp"
+            android:textColor="@color/themeColor"
+            android:fontFamily="@font/regular" />
+
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@id/t1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/regular"
+            android:text="Date"
+            android:textColor="@color/themeColor"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dianmediana.tugasproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TugasProject"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="true" />
+        <activity android:name=".model.MenuObese" />
+        <activity android:name=".menu.MenuUnderweight" />
+        <activity android:name=".menu.MenuIdeal" />
+        <activity android:name=".model.MenuOverweight" />
+        <activity
+            android:name=".Splash"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".main.HitungBerat" />
+        <activity android:name=".DetailRecommendation" />
+        <activity android:name=".DetailRecipe" />
+        <activity android:name=".menu.MenuDrinks" />
+        <activity android:name=".menu.MenuDesserts" />
+        <activity android:name=".menu.MenuSoups" />
+        <activity android:name=".menu.MenuMainDishes" />
+        <activity android:name=".menu.MenuAppetizers" />
+        <activity android:name=".menu.MenuSupper" />
+        <activity android:name=".menu.MenuDinner" />
+        <activity android:name=".menu.MenuLunch" />
+        <activity android:name=".menu.MenuBreakfast" />
+        <activity android:name=".TipsWebView" />
+        <activity android:name=".user.AboutUs" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

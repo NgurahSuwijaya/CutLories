@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu.MenuBreakfast"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/viewA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:src="@drawable/ic_back1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/back"
+                android:fontFamily="@font/semibold"
+                android:text="Menu Breakfast"
+                android:textColor="#402B00"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/breakfastView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </ScrollView>
+
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_addddd"
+        app:layout_anchor="@id/viewA"
+        app:layout_anchorGravity="bottom|right|end"/>
+
+    <!--        <View-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0.7dp"-->
+    <!--            android:layout_below="@id/toolbar"-->
+    <!--            android:background="#000000" />-->
+
+    <!--        <EditText-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:id="@+id/searchAction"-->
+    <!--            android:hint="Search..."-->
+    <!--            android:layout_below="@id/toolbar"-->
+    <!--            android:background="@drawable/bg_form"-->
+    <!--            android:drawableRight="@drawable/ic_search"-->
+    <!--            android:paddingLeft="10dp"-->
+    <!--            android:paddingRight="10dp"-->
+    <!--            android:inputType="textPersonName"/>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
