@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -43,6 +45,8 @@ import com.dianmediana.tugasproject.MainActivity;
 import com.dianmediana.tugasproject.RegisterActivity;
 import com.dianmediana.tugasproject.main.HitungBerat;
 import com.dianmediana.tugasproject.R;
+import com.dianmediana.tugasproject.model.DataModelUsers;
+import com.dianmediana.tugasproject.sqlite.DbHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,6 +54,7 @@ import org.json.JSONObject;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,7 +64,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private ImageButton imageButtonHitung;
     private Button buttonEdit;
     private TextView name, email;
+    private ArrayList<DataModelUsers> users = new ArrayList<>();
     SharedPreferences userPref;
+    DbHelper db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,11 +77,19 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        db = new DbHelper(getActivity());
         imageButtonHitung = view.findViewById(R.id.hitung);
         name = view.findViewById(R.id.textViewNameProfile);
         email = view.findViewById(R.id.textViewEmailProfile);
         buttonEdit = view.findViewById(R.id.cirChangeProfileButton);
         imageButtonHitung.setOnClickListener(this);
+
+        users = db.readAllData();
+        String DbName = users.get(0).getName();
+        String DbEmail = users.get(0).getEmail();
+
+        name.setText(DbName);
+        email.setText(DbEmail);
 
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override

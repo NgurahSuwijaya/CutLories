@@ -9,6 +9,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.dianmediana.tugasproject.model.DataModelUsers;
+
+import java.util.ArrayList;
+
 public class DbHelper extends SQLiteOpenHelper {
     private static final String database_name = "db_cutlories";
 
@@ -49,7 +53,32 @@ public class DbHelper extends SQLiteOpenHelper {
         db.insert(table_users, null, values);
     }
 
-    public Cursor readAllData(){
+    public ArrayList<DataModelUsers> readAllData(){
+        String sql = "select * from " + table_users;
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<DataModelUsers> users = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(sql, null);
+        if(cursor.moveToFirst()){
+            do{
+                users.add(new DataModelUsers(
+                        Integer.parseInt(cursor.getString(0)),
+                        cursor.getString(1),
+                        Integer.parseInt(cursor.getString(2)),
+                        Integer.parseInt(cursor.getString(3)),
+                        Integer.parseInt(cursor.getString(4)),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7)
+                ));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return users;
+    }
+
+    public Cursor readAllData2(SQLiteDatabase sqLiteDatabase){
         String sql = "select * from " + table_users;
         SQLiteDatabase db = getReadableDatabase();
 
