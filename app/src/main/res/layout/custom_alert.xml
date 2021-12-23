@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/alert_greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="R E G I S T E R"
+                android:textColor="@color/colorAccent"
+                android:layout_centerHorizontal="true"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_below="@id/alert_greeting"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/title_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v1"
+                android:layout_marginTop="25dp"
+                android:text="Nama       :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v1"
+                android:layout_marginTop="25dp"
+                android:layout_toRightOf="@id/title_nama"
+                android:text=""
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/title_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_nama"
+                android:layout_marginTop="10dp"
+                android:text="Email        :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_nama"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_email"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_email" />
+
+            <TextView
+                android:id="@+id/title_umur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_email"
+                android:layout_marginTop="10dp"
+                android:text="Umur        :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_umur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_email"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_umur"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_umur" />
+
+            <TextView
+                android:id="@+id/title_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_umur"
+                android:layout_marginTop="10dp"
+                android:text="Gender     :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_umur"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_gender"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_gender" />
+
+            <TextView
+                android:id="@+id/title_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_gender"
+                android:layout_marginTop="10dp"
+                android:text="Weight      :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_gender"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_weight"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_weight" />
+
+            <TextView
+                android:id="@+id/title_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_weight"
+                android:layout_marginTop="10dp"
+                android:text="Height       :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_weight"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_height"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_height" />
+
+            <TextView
+                android:id="@+id/title_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_height"
+                android:layout_marginTop="10dp"
+                android:text="Part of Drean Body :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_height"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_body"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_body" />
+
+            <TextView
+                android:id="@+id/title_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_body"
+                android:layout_marginTop="10dp"
+                android:text="Password  :  "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/alert_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_body"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/title_password"
+                android:text=""
+                android:textSize="15dp"
+                android:layout_toEndOf="@id/title_password" />
+
+            <Button
+                android:id="@+id/button_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/alert_password"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#ffc857"
+                android:text="OK"
+                app:cornerRadius="10dp" />
+
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
