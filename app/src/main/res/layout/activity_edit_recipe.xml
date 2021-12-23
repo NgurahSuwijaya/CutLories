@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditRecipeActivity"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageEditProfileEdit"
+        android:layout_width="118dp"
+        android:layout_height="103dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@color/green" />
+
+    <TextView
+        android:id="@+id/textViewChangePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="select image"
+        android:textColor="#1E88E5" />
+
+    <EditText
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nama makanan"/>
+
+    <EditText
+        android:id="@+id/kalori"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="jumlah kalori"/>
+
+    <EditText
+        android:id="@+id/durasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="durasi masak"/>
+
+    <EditText
+        android:id="@+id/sajian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="jumlah sajian"/>
+
+    <EditText
+        android:id="@+id/alat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="alat"/>
+
+    <EditText
+        android:id="@+id/bahan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="bahan"/>
+
+    <EditText
+        android:id="@+id/prosedur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="cara memasak"/>
+</LinearLayout>
