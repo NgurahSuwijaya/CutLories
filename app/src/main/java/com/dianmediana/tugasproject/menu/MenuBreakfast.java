@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.dianmediana.tugasproject.CreateRecipeActivity;
 import com.dianmediana.tugasproject.MainActivity;
 import com.dianmediana.tugasproject.R;
 import com.dianmediana.tugasproject.adapter.MyAdapterRecipe;
 import com.dianmediana.tugasproject.model.DataModelRecipe;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -20,6 +22,7 @@ public class MenuBreakfast extends AppCompatActivity {
 
     ArrayList<DataModelRecipe> dataholder;
     MyAdapterRecipe adapter;
+    FloatingActionButton add_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +30,20 @@ public class MenuBreakfast extends AppCompatActivity {
         setContentView(R.layout.activity_menu_breakfast);
         getSupportActionBar().hide();
 
+        add_button = findViewById(R.id.fab);
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuBreakfast.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuBreakfast.this, CreateRecipeActivity.class);
                 startActivity(intent);
             }
         });

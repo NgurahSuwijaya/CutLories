@@ -4,65 +4,177 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".EditRecipeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageEditProfileEdit"
-        android:layout_width="118dp"
-        android:layout_height="103dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:src="@color/green" />
-
-    <TextView
-        android:id="@+id/textViewChangePhoto"
+    <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="select image"
-        android:textColor="#1E88E5" />
+        android:gravity="center_vertical"
+        android:padding="5dp">
 
-    <EditText
-        android:id="@+id/nama"
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:backgroundTint="@color/darkTextColor"
+            android:paddingLeft="5dp"
+            android:src="@drawable/ic_back1" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/header"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center_vertical"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:text="Details"-->
+        <!--            android:textColor="@color/darkTextColor"-->
+        <!--            android:textSize="15sp"-->
+        <!--            android:textStyle="bold" />-->
+
+    </RelativeLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nama makanan"/>
+        android:layout_marginTop="10dp">
 
-    <EditText
-        android:id="@+id/kalori"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="jumlah kalori"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-    <EditText
-        android:id="@+id/durasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="durasi masak"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageEditProfileEdit"
+                android:layout_width="118dp"
+                android:layout_height="103dp"
+                android:layout_gravity="center"
+                android:src="@color/green" />
 
-    <EditText
-        android:id="@+id/sajian"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="jumlah sajian"/>
+            <TextView
+                android:id="@+id/textViewChangePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="select image"
+                android:textColor="#1E88E5"
+                android:layout_marginBottom="30dp"/>
 
-    <EditText
-        android:id="@+id/alat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="alat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Resep"
+                android:layout_marginTop="20dp"
+                android:layout_margin="5dp"/>
 
-    <EditText
-        android:id="@+id/bahan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="bahan"/>
+            <EditText
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""/>
 
-    <EditText
-        android:id="@+id/prosedur"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="cara memasak"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Besar Kalori"
+                android:layout_marginTop="20dp"
+                android:layout_margin="5dp"/>
+
+            <EditText
+                android:id="@+id/kalori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Durasi Masak"
+                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/durasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jumlah sajian"
+                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/sajian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alat dan Bahan"
+                android:layout_marginTop="20dp"
+                android:layout_margin="5dp"/>
+
+            <EditText
+                android:id="@+id/alatbahan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:gravity="start|top"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cara Masak"
+                android:layout_marginTop="20dp"
+                android:layout_margin="5dp"/>
+
+            <EditText
+                android:id="@+id/prosedur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:gravity="start|top"/>
+
+            <!--        <EditText-->
+            <!--            android:id="@+id/input_content"-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_height="0dp"-->
+            <!--            android:layout_marginStart="16dp"-->
+            <!--            android:layout_marginTop="8dp"-->
+            <!--            android:layout_marginEnd="16dp"-->
+            <!--            android:layout_marginBottom="8dp"-->
+            <!--            android:backgroundTint="#7C008A"-->
+            <!--            android:ems="10"-->
+            <!--            android:gravity="start|top"-->
+            <!--            android:hint="Content"-->
+            <!--            android:inputType="textMultiLine"-->
+            <!--            app:layout_constraintBottom_toTopOf="@+id/button_submit"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintHorizontal_bias="0.0"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/input_title" />-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>
+
+

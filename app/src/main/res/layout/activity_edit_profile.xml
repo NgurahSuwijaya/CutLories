@@ -25,8 +25,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:gravity="center"
+                android:orientation="vertical"
                 android:padding="20dp">
 
                 <TextView
@@ -36,14 +36,14 @@
                     android:gravity="center"
                     android:text="Edit Profile"
                     android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageEditProfileEdit"
                     android:layout_width="118dp"
                     android:layout_height="103dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:src="@color/green" />
 
                 <TextView
@@ -55,76 +55,140 @@
                     android:textColor="#1E88E5" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlinedTextProfileName"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="336dp"
-                    android:layout_height="63dp"
-                    android:hint="Name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="68dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/editTextProfileName"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:inputType="text"
+                        android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlinedTextProfileAge"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="336dp"
-                    android:layout_height="63dp"
-                    android:hint="Age"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="68dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/editTextProfileAge"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:hint="Age"
+                        android:inputType="text"
+                        android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlinedTextProfileWeight"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="336dp"
-                    android:layout_height="63dp"
-                    android:hint="Weight"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="68dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/editTextProfileWeight"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:hint="Weight"
+                        android:inputType="text"
+                        android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/outlinedTextProfileHeight"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="336dp"
-                    android:layout_height="63dp"
-                    android:hint="Height"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="68dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/editTextProfileHeight"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content"
+                        android:hint="Height"
+                        android:inputType="text"
+                        android:textSize="15sp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/outlinedTextProfileName"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="336dp"-->
+                <!--                    android:layout_height="63dp"-->
+                <!--                    android:hint="Name"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    tools:ignore="MissingConstraints"-->
+                <!--                    tools:layout_editor_absoluteY="68dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/editTextProfileName"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/outlinedTextProfileAge"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="336dp"-->
+                <!--                    android:layout_height="63dp"-->
+                <!--                    android:hint="Age"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    tools:ignore="MissingConstraints"-->
+                <!--                    tools:layout_editor_absoluteY="68dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/editTextProfileAge"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/outlinedTextProfileWeight"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="336dp"-->
+                <!--                    android:layout_height="63dp"-->
+                <!--                    android:hint="Weight"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    tools:ignore="MissingConstraints"-->
+                <!--                    tools:layout_editor_absoluteY="68dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/editTextProfileWeight"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/outlinedTextProfileHeight"-->
+                <!--                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                <!--                    android:layout_width="336dp"-->
+                <!--                    android:layout_height="63dp"-->
+                <!--                    android:hint="Height"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    tools:ignore="MissingConstraints"-->
+                <!--                    tools:layout_editor_absoluteY="68dp">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/editTextProfileHeight"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="match_parent" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
                 <RadioGroup
                     android:id="@+id/radioGroupProfileGender"
@@ -137,6 +201,7 @@
                         android:id="@+id/radioButtonProfileMale"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorAccent"
                         android:text="Male"
                         android:textColorHighlight="#000000"
                         android:textColorLink="#000000" />
@@ -145,6 +210,7 @@
                         android:id="@+id/radioButtonProfileFemale"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:buttonTint="@color/colorAccent"
                         android:text="Female"
                         android:textColorHighlight="#000000"
                         android:textColorLink="#171010" />
@@ -161,6 +227,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:buttonTint="@color/colorAccent"
                         android:text="Top"
                         android:textColorHighlight="#000000"
                         android:textColorLink="#170D0D" />
@@ -170,6 +237,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:buttonTint="@color/colorAccent"
                         android:text="Mid"
                         android:textColorHighlight="#000000"
                         android:textColorLink="#000000" />
@@ -179,6 +247,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:buttonTint="@color/colorAccent"
                         android:text="Bottom"
                         android:textColorHighlight="#000000"
                         android:textColorLink="#000000" />
@@ -187,15 +256,14 @@
                 <Button
                     android:id="@+id/changeProfileButton"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Edit"
-                    app:rippleColor="#231414"
+                    android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
                     android:backgroundTint="#ffc857"
                     android:fontFamily="@font/g_bold"
+                    android:text="Edit"
                     app:cornerRadius="10dp"
-                    android:layout_marginTop="20dp"/>
-
+                    app:rippleColor="#231414" />
 
             </LinearLayout>
 
