@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,12 +29,16 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.dianmediana.tugasproject.model.DataModelUsers;
+import com.dianmediana.tugasproject.sqlite.DbHelper;
+import com.dianmediana.tugasproject.user.ProfileFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.BlockingDeque;
@@ -44,11 +49,13 @@ public class EditProfileActivity extends AppCompatActivity {
     private EditText editTextName, editTextAge, editTextWeight, editTextHeight;
     private CheckBox checkBoxBottom, checkBoxMid, checkBoxTop;
     private Button buttonEdit;
+    private ArrayList<DataModelUsers> users = new ArrayList<>();
     private RadioGroup radioGroupGender;
     private RadioButton radioButtonMale, radioButtonFemale;
     private TextView textViewSelectPhoto, textViewNameProfile;
     private static final int GALLERY_ADD_PROFILE = 1;
     private SharedPreferences userPref;
+    private DbHelper db;
     private Bitmap bitmap = null;
     private ProgressDialog progressDialog;
     private String stringGetName, stringGetAge, stringGetWeight, stringGetHeight, stringGetBody, stringGetGender;
@@ -61,6 +68,7 @@ public class EditProfileActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         progressDialog = new ProgressDialog(this);
         userPref = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
+        db = new DbHelper(this);
         textViewNameProfile = findViewById(R.id.textViewNameProfile);
         editTextAge= findViewById(R.id.editTextProfileAge);
         editTextName= findViewById(R.id.editTextProfileName);
@@ -76,12 +84,20 @@ public class EditProfileActivity extends AppCompatActivity {
         radioButtonMale = findViewById(R.id.radioButtonProfileMale);
         radioGroupGender = findViewById(R.id.radioGroupProfileGender);
 
-        stringSetName = userPref.getString("name","");
-        stringSetAge= userPref.getString("age",""); ;
-        stringSetWeight= userPref.getString("bodyWeight","");;
-        stringSetHeight= userPref.getString("bodyHeight","");;
-        stringSetBody= userPref.getString("partOfDreamBody","");;
-        stringSetGender= userPref.getString("gender","");;
+        users = db.readAllData();
+        String DbName = users.get(0).getName();
+        String DbAge = String.valueOf(users.get(0).getAge());
+        String DbWeight = String.valueOf(users.get(0).getWeight());
+        String DbHeight = String.valueOf(users.get(0).getHeight());
+        String DbGender = users.get(0).getGender();
+        String DbBody = users.get(0).getBody();
+
+        stringSetName = DbName;
+        stringSetAge= DbAge;
+        stringSetWeight= DbWeight;
+        stringSetHeight= DbHeight;
+        stringSetBody= DbBody;
+        stringSetGender= DbGender;
 
         editTextName.setText(stringSetName);
         editTextAge.setText(stringSetAge);
@@ -194,7 +210,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     editor.putString("partOfDreamBody",object.getString("partOfDreamBody"));
                     editor.apply();
                     Toast.makeText(EditProfileActivity.this, "Edit Success.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
+                    Intent intent = new Intent(EditProfileActivity.this, ProfileFragment.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(EditProfileActivity.this, "MACAMDLDLL", Toast.LENGTH_SHORT).show();
