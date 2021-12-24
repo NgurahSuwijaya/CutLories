@@ -84,6 +84,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         buttonEdit = view.findViewById(R.id.cirChangeProfileButton);
         imageButtonHitung.setOnClickListener(this);
 
+        //mengambil data dari database dan ditampilkan yaitu username dan email
         users = db.readAllData();
         String DbName = users.get(0).getName();
         String DbEmail = users.get(0).getEmail();

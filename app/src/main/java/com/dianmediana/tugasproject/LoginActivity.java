@@ -73,15 +73,20 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     public void login(){
+        //Request Api Login ke Laravel dengan Address Constant -> Login
         StringRequest request = new StringRequest(Request.Method.POST, Constant.LOGIN,response -> {
             try {
                 JSONObject object = new JSONObject(response);
                 if (object.getBoolean("success")){
                     JSONObject user = object.getJSONObject("user");
+
+                    //Input data user ke shared preferences table users di ambil dari response API
                     SharedPreferences userPref = getApplication().getSharedPreferences("user", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = userPref.edit();
                     editor.putString("token",object.getString("token"));
                     editor.putString("id",user.getString("id"));
+
+                    //Input data user ke database tabel users di ambil dari response API
                     db.deleteAll();
                     ContentValues values = new ContentValues();
                     values.put(DbHelper.row_name, user.getString("name"));
@@ -109,6 +114,7 @@ public class LoginActivity extends AppCompatActivity{
             Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
             error.printStackTrace();
         }){
+            //input parameter login yaitu email dan password
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();

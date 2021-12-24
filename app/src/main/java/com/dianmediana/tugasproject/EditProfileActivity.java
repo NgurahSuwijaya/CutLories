@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -65,6 +66,7 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+        //deklarasi semua view dan variable
         getSupportActionBar().hide();
         progressDialog = new ProgressDialog(this);
         userPref = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
@@ -84,6 +86,7 @@ public class EditProfileActivity extends AppCompatActivity {
         radioButtonMale = findViewById(R.id.radioButtonProfileMale);
         radioGroupGender = findViewById(R.id.radioGroupProfileGender);
 
+        //mengambil data dari database user
         users = db.readAllData();
         String DbName = users.get(0).getName();
         String DbAge = String.valueOf(users.get(0).getAge());
@@ -99,6 +102,7 @@ public class EditProfileActivity extends AppCompatActivity {
         stringSetBody= DbBody;
         stringSetGender= DbGender;
 
+        //menampilkan data dari user
         editTextName.setText(stringSetName);
         editTextAge.setText(stringSetAge);
         editTextWeight.setText(stringSetWeight);
@@ -131,7 +135,7 @@ public class EditProfileActivity extends AppCompatActivity {
         if(checkBoxBottom.isChecked()){
             stringGetBody = stringGetBody + "Bottom; ";
         }
-
+        //melakukan input photo dengan interface on click
         textViewSelectPhoto.setOnClickListener(v-> {
             Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType("image/*");
@@ -145,14 +149,13 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
     }
-
+    //mengambil foto dari gambar dan menampilkan kembali pada imageview
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==GALLERY_ADD_PROFILE && requestCode==RESULT_OK){
             Uri imgUri = data.getData();
             imageViewProfile.setImageURI(imgUri);
-
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),imgUri);
             } catch (IOException e) {
@@ -160,7 +163,7 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         }
     }
-
+    //Method Edit Profile
     private void editUserProfile(){
         progressDialog.setMessage("Saving");
         progressDialog.show();
@@ -194,33 +197,38 @@ public class EditProfileActivity extends AppCompatActivity {
 
         Log.d("ageeeeeggege", stringGetAge);
         Log.d("nqnqnenqen", stringGetName);
-
+        ////Request Api edit profile ke Laravel dengan Address Constant -> EDIT_PROFILE
         StringRequest request = new StringRequest(Request.Method.POST, Constant.EDIT_PROFILE, response -> {
             try {
                 JSONObject object = new JSONObject(response);
                 Log.d("TAG", String.valueOf(object));
                 if (object.getBoolean("success")){
-                    SharedPreferences.Editor editor = userPref.edit();
-                    editor.putString("name",object.getString("name"));
-                    editor.putString("age",object.getString("age"));
-                    editor.putString("bodyHeight",object.getString("bodyHeight"));
-                    editor.putString("bodyWeight",object.getString("bodyWeight"));
-                    editor.putString("gender",object.getString("gender"));
-                    editor.putString("photo",object.getString("photo"));
-                    editor.putString("partOfDreamBody",object.getString("partOfDreamBody"));
-                    editor.apply();
+                    //Input data user ke shared preferences table users di ambil dari response API
+                    JSONObject user = object.getJSONObject("user");
+                    db.deleteAll();
+                    ContentValues values = new ContentValues();
+                    values.put(DbHelper.row_name, user.getString("name"));
+                    values.put(DbHelper.row_age, user.getString("age"));
+                    values.put(DbHelper.row_gender, user.getString("gender"));
+                    values.put(DbHelper.row_email, user.getString("email"));
+                    values.put(DbHelper.row_height, user.getString("bodyHeight"));
+                    values.put(DbHelper.row_weight, user.getString("bodyWeight"));
+                    values.put(DbHelper.row_body, user.getString("partOfDreamBody"));
+
+                    db.insertUsers(values);
+
                     Toast.makeText(EditProfileActivity.this, "Edit Success.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(EditProfileActivity.this, "MACAMDLDLL", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(EditProfileActivity.this, "MACAMDLDLL", Toast.LENGTH_SHORT).show();
                 }
             }catch (JSONException e){
                 e.printStackTrace();
-                Toast.makeText(EditProfileActivity.this, "TOLTOL", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(EditProfileActivity.this, "TOLTOL", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
             }
-            Toast.makeText(EditProfileActivity.this, "GBLK", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(EditProfileActivity.this, "GBLK", Toast.LENGTH_SHORT).show();
             progressDialog.dismiss();
         },error -> {
             error.printStackTrace();

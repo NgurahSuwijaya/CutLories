@@ -84,22 +84,17 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-//                Toast.makeText(getApplicationContext()
-//                , "You Clicked " + item.getIcon()
-//                ,Toast.LENGTH_SHORT).show();
+
             }
         });
 
         bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
-//                Toast.makeText(getApplicationContext()
-//                        , "You Reselected " + item.getIcon()
-//                        ,Toast.LENGTH_SHORT).show();
+
             }
         });
 
-//        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new RecommendationFragment()).commit();
     }
 
     @Override
@@ -107,21 +102,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         getMenuInflater().inflate(R.menu.main,menu);
 
-//        MenuItem menuItem = menu.findItem(R.id.action_search);
-//
-//        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query){
-//                searchView.clearFocus();
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                return false;
-//            }
-//        });
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -135,8 +115,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        //Melakukan Logout user
         else if (id == R.id.logout) {
             Log.d("sebelum SR", "ayam: ");
+            //Request Api Logout ke Laravel dengan Address Constant -> logout
             StringRequest request = new StringRequest(Request.Method.GET, Constant.LOGOUT, response -> {
                 Log.d("sebelum SR", "ayam:2 ");
                 try {
@@ -154,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Logout Failed", Toast.LENGTH_SHORT).show();
                 error.printStackTrace();
             }){
+                //input parameter logout yaitu token
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     String token = userPref.getString("token","");

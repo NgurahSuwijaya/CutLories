@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity{
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Validasi Input Kosong
                 isAllFieldsChecked = CheckAllFields();
                 if(isAllFieldsChecked) {
                     getsName = name.getText().toString();
@@ -124,7 +124,7 @@ public class RegisterActivity extends AppCompatActivity{
         });
         changeStatusBarColor();
     }
-
+    //method validasi input kosong
     private boolean CheckAllFields(){
         if (name.length() == 0) {
             name.setError("Must be Filled");
@@ -157,12 +157,15 @@ public class RegisterActivity extends AppCompatActivity{
         }
         return true;
     }
-
+    //Method register
     public void register(){
+        //Request Api Login ke Laravel dengan Address Constant -> Register
         StringRequest request = new StringRequest(Request.Method.POST, Constant.REGISTER, response -> {
             try {
                 JSONObject object = new JSONObject(response);
                 if (object.getBoolean("success")){
+
+                    //Input data user ke shared preferences table users di ambil dari response API
                     JSONObject user = object.getJSONObject("user");
                     SharedPreferences userPref = getApplication().getSharedPreferences("user", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = userPref.edit();
@@ -170,6 +173,7 @@ public class RegisterActivity extends AppCompatActivity{
                     editor.putString("id",user.getString("id"));
                     editor.putBoolean("isLoggedIn", true);
 
+                    //Input data user ke database tabel users diamhbil dari response API
                     db.deleteAll();
                     ContentValues values = new ContentValues();
                     values.put(DbHelper.row_name, user.getString("name"));
@@ -192,6 +196,7 @@ public class RegisterActivity extends AppCompatActivity{
         },error -> {
             error.printStackTrace();
         }){
+            //input parameter login yaitu semua data user
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<>();
