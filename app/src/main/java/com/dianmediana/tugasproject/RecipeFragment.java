@@ -78,15 +78,15 @@ public class RecipeFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.lunch:
-                intent = new Intent(getActivity(), MenuLunch.class);
+                intent = new Intent(getActivity(), MenuBreakfast.class);
                 startActivity(intent);
                 break;
             case R.id.dinner:
-                intent = new Intent(getActivity(), MenuDinner.class);
+                intent = new Intent(getActivity(), MenuBreakfast.class);
                 startActivity(intent);
                 break;
             case R.id.supper:
-                intent = new Intent(getActivity(), MenuSupper.class);
+                intent = new Intent(getActivity(), MenuBreakfast.class);
                 startActivity(intent);
                 break;
             case R.id.salads:
