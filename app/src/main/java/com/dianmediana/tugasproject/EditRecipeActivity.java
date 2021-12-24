@@ -66,7 +66,7 @@ public class EditRecipeActivity extends AppCompatActivity {
         String bahan = intent.getStringExtra("alat_bahan");
         String proses = intent.getStringExtra("cara_masak");
 
-        Log.d("TAG1234", id);
+        Log.d("TAG1234", String.valueOf(id));
 
         id_recipe = String.valueOf(id);
         recipeName.setText(nama);
