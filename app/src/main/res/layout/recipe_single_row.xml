@@ -28,10 +28,10 @@
             android:layout_below="@+id/img1"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/g_bold"
-            android:text="Nama Makanan"
-            android:textSize="18sp"
             android:gravity="center_horizontal"
-            android:textColor="#000"/>
+            android:text="Nama Makanan"
+            android:textColor="#000"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/t2"
@@ -42,24 +42,24 @@
             android:layout_marginTop="12dp"
             android:fontFamily="@font/g_light"
             android:text="kalori makanan"
-            android:textSize="13sp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="13sp" />
 
         <LinearLayout
             android:id="@+id/L1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_below="@id/t2"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/t3img"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/ic_waktu"
-                android:layout_gravity="center_vertical"/>
+                android:src="@drawable/ic_waktu" />
 
             <TextView
                 android:id="@+id/t3"

@@ -26,6 +26,16 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String row_height = "bodyHeight";
     public static final String row_weight = "bodyWeight";
 
+    public static final String table_breakfast = "breakfasts";
+    public static final String row_id_breakfast = "id";
+    public static final String row_user_id = "id_user";
+    public static final String row_name_breakfast = "breakfast_name";
+    public static final String row_calories = "calories";
+    public static final String row_duration = "duration";
+    public static final String row_portion = "portion";
+    public static final String row_materials = "materials";
+    public static final String row_procedure = "procedure";
+    public static final String row_image = "image";
 
     private static SQLiteDatabase db;
     private Context context;
@@ -41,16 +51,24 @@ public class DbHelper extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + table_users + "(" + row_id + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + row_name + " TEXT," + row_age + " INTEGER," + row_height + " INTEGER," + row_weight + " INTEGER," + row_gender + " TEXT," + row_email + " TEXT," + row_body + " TEXT)";
 
+        String query2 = "CREATE TABLE " + table_breakfast + "(" + row_id_breakfast + " INTEGER PRIMARY KEY,"
+                + row_user_id + " INTEGER," + row_name_breakfast + " TEXT," + row_calories + " INTEGER," + row_duration + " INTEGER," + row_portion + " INTEGER," + row_materials + " TEXT," + row_procedure + " TEXT," + row_image + " TEXT)";
         db.execSQL(query);
+        db.execSQL(query2);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + table_users);
+        db.execSQL("DROP TABLE IF EXISTS " + table_breakfast);
     }
 
     public static void insertUsers(ContentValues values){
         db.insert(table_users, null, values);
+    }
+
+    public static void insertBreakfast(ContentValues values){
+        db.insert(table_breakfast, null, values);
     }
 
     public ArrayList<DataModelUsers> readAllData(){
@@ -78,8 +96,8 @@ public class DbHelper extends SQLiteOpenHelper {
         return users;
     }
 
-    public Cursor readAllData2(SQLiteDatabase sqLiteDatabase){
-        String sql = "select * from " + table_users;
+    public Cursor readAllData2(){
+        String sql = "select * from " + table_breakfast;
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = null;
@@ -114,5 +132,10 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         //deleting rows
         db.delete(table_users, null, null);
+    }
+    public void deleteAllBreakfast() {
+        SQLiteDatabase db = getWritableDatabase();
+        //deleting rows
+        db.delete(table_breakfast, null, null);
     }
 }

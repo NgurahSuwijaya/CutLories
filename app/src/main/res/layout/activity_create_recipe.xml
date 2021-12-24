@@ -26,18 +26,6 @@
             android:paddingLeft="5dp"
             android:src="@drawable/ic_back1" />
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/header"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_gravity="center_vertical"-->
-        <!--            android:layout_centerHorizontal="true"-->
-        <!--            android:layout_centerVertical="true"-->
-        <!--            android:text="Details"-->
-        <!--            android:textColor="@color/darkTextColor"-->
-        <!--            android:textSize="15sp"-->
-        <!--            android:textStyle="bold" />-->
-
     </RelativeLayout>
 
     <ScrollView
@@ -75,7 +63,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/nama"
+                android:id="@+id/editTextEditRecipeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""/>
@@ -88,10 +76,11 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/kalori"
+                android:id="@+id/editTextEditRecipeCalories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""/>
+                android:hint=""
+                android:inputType="number" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -101,10 +90,11 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/durasi"
+                android:id="@+id/editTextEditRecipeDuration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=""/>
+                android:hint=""
+                android:inputType="number" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -114,7 +104,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/sajian"
+                android:id="@+id/editTextEditRecipePortion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
@@ -128,7 +118,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/alatbahan"
+                android:id="@+id/editTextEditRecipeMaterials"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
@@ -144,7 +134,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/prosedur"
+                android:id="@+id/editTextEditRecipeProcedure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
@@ -152,27 +142,14 @@
                 android:ems="10"
                 android:gravity="start|top"/>
 
-            <!--        <EditText-->
-            <!--            android:id="@+id/input_content"-->
-            <!--            android:layout_width="0dp"-->
-            <!--            android:layout_height="0dp"-->
-            <!--            android:layout_marginStart="16dp"-->
-            <!--            android:layout_marginTop="8dp"-->
-            <!--            android:layout_marginEnd="16dp"-->
-            <!--            android:layout_marginBottom="8dp"-->
-            <!--            android:backgroundTint="#7C008A"-->
-            <!--            android:ems="10"-->
-            <!--            android:gravity="start|top"-->
-            <!--            android:hint="Content"-->
-            <!--            android:inputType="textMultiLine"-->
-            <!--            app:layout_constraintBottom_toTopOf="@+id/button_submit"-->
-            <!--            app:layout_constraintEnd_toEndOf="parent"-->
-            <!--            app:layout_constraintHorizontal_bias="0.0"-->
-            <!--            app:layout_constraintStart_toStartOf="parent"-->
-            <!--            app:layout_constraintTop_toBottomOf="@+id/input_title" />-->
+            <Button
+                android:id="@+id/cirCreateRecipeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
 
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

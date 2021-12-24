@@ -210,7 +210,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     editor.putString("partOfDreamBody",object.getString("partOfDreamBody"));
                     editor.apply();
                     Toast.makeText(EditProfileActivity.this, "Edit Success.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(EditProfileActivity.this, ProfileFragment.class);
+                    Intent intent = new Intent(EditProfileActivity.this, MainActivity.class);
                     startActivity(intent);
                 }else{
                     Toast.makeText(EditProfileActivity.this, "MACAMDLDLL", Toast.LENGTH_SHORT).show();

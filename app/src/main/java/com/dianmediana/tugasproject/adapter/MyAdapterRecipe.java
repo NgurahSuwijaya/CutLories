@@ -1,5 +1,6 @@
 package com.dianmediana.tugasproject.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -38,6 +39,7 @@ public class MyAdapterRecipe extends RecyclerView.Adapter<MyAdapterRecipe.ViewHo
     }
 
     //menampilkan data pada breakfast_single_row
+    @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context).asBitmap().load(dataholder.get(position).getImage()).into(holder.img);
@@ -49,13 +51,14 @@ public class MyAdapterRecipe extends RecyclerView.Adapter<MyAdapterRecipe.ViewHo
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(context, namaMakanan.get(position), Toast.LENGTH_LONG).show();
+//              Toast.makeText(context, namaMakanan.get(position), Toast.LENGTH_LONG).show();
 
                 //untuk berpindah ke activity lain. asalnya context tujuannya ke DetailActivity.java
                 Intent intent = new Intent(context, DetailRecipe.class);
 
-                //mengirimkan data
                 //meyimpan data dalam memori, baru nanti diterima oleh penerima yaitu DetailActivity. Data yang dikirim berupa foto, nama, dan info
+                intent.putExtra("id", dataholder.get(position).getId());
+                intent.putExtra("id_user", dataholder.get(position).getId_user());
                 intent.putExtra("foto_makanan", dataholder.get(position).getImage());
                 intent.putExtra("nama_makanan", dataholder.get(position).getHeader());
                 intent.putExtra("desc_makanan", dataholder.get(position).getDesc());
@@ -91,46 +94,5 @@ public class MyAdapterRecipe extends RecyclerView.Adapter<MyAdapterRecipe.ViewHo
             cardView = itemView.findViewById(R.id.cardView);
         }
     }
-
-//    public MyAdapterRecipe(ArrayList<DataModelRecipe> exampleList) {
-//        dataholder = exampleList;
-//    }
-//
-//    public void filterList(ArrayList<DataModelRecipe> filteredList) {
-//        dataholder = filteredList;
-//        notifyDataSetChanged();
-//    }
-
-//    public static final class holder extends RecyclerView.ViewHolder {}
-
-//    public Filter getFilter() {
-//        return new Filter() {
-//            @Override
-//            protected FilterResults performFiltering(CharSequence charSequence) {
-//                String Key = charSequence.toString();
-//                if (Key.isEmpty()) {
-//                    filteredMenuList = namaMakanan;
-//                }
-//                else {
-//                    ArrayList<String> isfiltered = new ArrayList<>();
-//                    for (String row: namaMakanan) {
-//                        if (namaMakanan.contains(Key.toLowerCase())){
-//                            isfiltered.add(row);
-//                        }
-//                    }
-//                    filteredMenuList = isfiltered;
-//                }
-//                FilterResults filterResults = new FilterResults();
-//                filterResults.values = filteredMenuList;
-//                return null;
-//            }
-//
-//            @Override
-//            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-//                filteredMenuList = filterResults.values;
-//                notifyDataSetChanged();
-//            }
-//        };
-//    }
 }
 

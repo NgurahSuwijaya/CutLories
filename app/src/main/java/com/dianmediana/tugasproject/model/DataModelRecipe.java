@@ -3,9 +3,12 @@ package com.dianmediana.tugasproject.model;
 public class DataModelRecipe {
 
     String image;
+    int id,id_user;
     String header, desc, time, portion, tools, procedure;
 
-    public DataModelRecipe(String image, String header, String desc, String time, String portion, String tools, String procedure) {
+    public DataModelRecipe(int id, int id_user, String header, String desc, String time, String portion, String tools, String procedure, String image) {
+        this.id = id;
+        this.id_user = id_user;
         this.image = image;
         this.header = header;
         this.desc = desc;
@@ -13,6 +16,22 @@ public class DataModelRecipe {
         this.portion = portion;
         this.tools = tools;
         this.procedure = procedure;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getImage() {

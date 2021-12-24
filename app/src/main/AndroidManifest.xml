@@ -26,10 +26,10 @@
         <activity
             android:name=".EditProfileActivity"
             android:exported="true" />
-        <activity android:name=".model.MenuObese" />
+        <activity android:name=".menu.MenuObese" />
         <activity android:name=".menu.MenuUnderweight" />
         <activity android:name=".menu.MenuIdeal" />
-        <activity android:name=".model.MenuOverweight" />
+        <activity android:name=".menu.MenuOverweight" />
         <activity
             android:name=".Splash"
             android:theme="@style/AppTheme.NoActionBar">

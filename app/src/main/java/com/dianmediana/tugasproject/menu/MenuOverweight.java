@@ -16,7 +16,7 @@ import com.dianmediana.tugasproject.model.DataModelRecipe;
 
 import java.util.ArrayList;
 
-public class MenuIdeal extends AppCompatActivity {
+public class MenuOverweight extends AppCompatActivity {
 
     ArrayList<DataModelRecipe> dataholder;
     MyAdapterRecipe adapter;
@@ -25,14 +25,14 @@ public class MenuIdeal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_ideal);
+        setContentView(R.layout.activity_menu_overweight);
         getSupportActionBar().hide();
 
         ImageView back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuIdeal.this, MainActivity.class);
+                Intent intent = new Intent(MenuOverweight.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -40,7 +40,7 @@ public class MenuIdeal extends AppCompatActivity {
     }
 
     private void prosesRecyclerViewAdapter() {
-        RecyclerView recyclerView = findViewById(R.id.idealView);
+        RecyclerView recyclerView = findViewById(R.id.overweightView);
         MyAdapterRecipe adapter = new MyAdapterRecipe(dataholder, this);
         recyclerView.setAdapter(adapter);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));

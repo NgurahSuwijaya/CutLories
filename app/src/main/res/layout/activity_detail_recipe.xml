@@ -202,23 +202,25 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/updateBtn"
+                        android:id="@+id/buttonUpdateRecipe"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:backgroundTint="#ffc857"
                         android:text="Update"
+                        android:visibility="visible"
                         app:cornerRadius="10dp" />
 
                     <Button
-                        android:id="@+id/deleteBtn"
+                        android:id="@+id/buttonDeleteRecipe"
                         android:layout_width="match_parent"
                         android:layout_height="55dp"
                         android:layout_margin="3dp"
                         android:layout_weight="1"
                         android:backgroundTint="#F07167"
                         android:text="Delete"
+                        android:visibility="visible"
                         app:cornerRadius="10dp" />
                 </LinearLayout>
 

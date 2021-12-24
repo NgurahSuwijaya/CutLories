@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.dianmediana.tugasproject.menu.MenuIdeal;
-import com.dianmediana.tugasproject.model.MenuObese;
-import com.dianmediana.tugasproject.model.MenuOverweight;
+import com.dianmediana.tugasproject.menu.MenuObese;
+import com.dianmediana.tugasproject.menu.MenuOverweight;
 import com.dianmediana.tugasproject.menu.MenuUnderweight;
 import com.dianmediana.tugasproject.R;
 

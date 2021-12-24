@@ -22,8 +22,8 @@ import com.dianmediana.tugasproject.menu.MenuMainDishes;
 import com.dianmediana.tugasproject.menu.MenuSoups;
 import com.dianmediana.tugasproject.menu.MenuSupper;
 import com.dianmediana.tugasproject.menu.MenuUnderweight;
-import com.dianmediana.tugasproject.model.MenuObese;
-import com.dianmediana.tugasproject.model.MenuOverweight;
+import com.dianmediana.tugasproject.menu.MenuObese;
+import com.dianmediana.tugasproject.menu.MenuOverweight;
 
 public class RecipeFragment extends Fragment implements View.OnClickListener {
 

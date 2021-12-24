@@ -75,7 +75,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/nama"
+                android:id="@+id/editTextEditRecipeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""/>
@@ -88,7 +88,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/kalori"
+                android:id="@+id/editTextEditRecipeCalories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""/>
@@ -101,7 +101,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/durasi"
+                android:id="@+id/editTextEditRecipeDuration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""/>
@@ -114,7 +114,7 @@
                 android:layout_marginTop="20dp"/>
 
             <EditText
-                android:id="@+id/sajian"
+                android:id="@+id/editTextEditRecipePortion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
@@ -128,7 +128,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/alatbahan"
+                android:id="@+id/editTextEditRecipeMaterials"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
@@ -144,7 +144,7 @@
                 android:layout_margin="5dp"/>
 
             <EditText
-                android:id="@+id/prosedur"
+                android:id="@+id/editTextEditRecipeProcedure"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint=""
@@ -170,7 +170,11 @@
             <!--            app:layout_constraintHorizontal_bias="0.0"-->
             <!--            app:layout_constraintStart_toStartOf="parent"-->
             <!--            app:layout_constraintTop_toBottomOf="@+id/input_title" />-->
-
+            <Button
+                android:id="@+id/cirEditRecipeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
         </LinearLayout>
 
     </ScrollView>
