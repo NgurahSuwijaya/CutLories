@@ -7,14 +7,14 @@
     android:layout_height="wrap_content"
     tools:context=".EditRecipeActivity"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:background="@color/colorAccent">
 
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:padding="5dp">
+        android:padding="15dp">
 
         <ImageView
             android:id="@+id/back"
@@ -24,7 +24,7 @@
             android:layout_gravity="center_vertical"
             android:backgroundTint="@color/darkTextColor"
             android:paddingLeft="5dp"
-            android:src="@drawable/ic_back1" />
+            android:src="@drawable/ic_back" />
 
         <!--        <TextView-->
         <!--            android:id="@+id/header"-->
@@ -42,115 +42,226 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="15dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageEditProfileEdit"
-                android:layout_width="118dp"
-                android:layout_height="103dp"
-                android:layout_gravity="center"
-                android:src="@color/green" />
-
-            <TextView
-                android:id="@+id/textViewChangePhoto"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="select image"
-                android:textColor="#1E88E5"
-                android:layout_marginBottom="30dp"/>
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nama Resep"
-                android:layout_marginTop="20dp"
-                android:layout_margin="5dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            <EditText
-                android:id="@+id/editTextEditRecipeName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""/>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imageEditProfileEdit"
+                        android:layout_width="118dp"
+                        android:layout_height="103dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center"
+                        android:src="@color/green" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Besar Kalori"
-                android:layout_marginTop="20dp"
-                android:layout_margin="5dp"/>
+                    <TextView
+                        android:id="@+id/textViewChangePhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/select_image"
+                        android:textColor="#1E88E5" />
 
-            <EditText
-                android:id="@+id/editTextEditRecipeCalories"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""/>
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Durasi Masak"
-                android:layout_margin="5dp"
-                android:layout_marginTop="20dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nama Resep"
+                            android:fontFamily="@font/semibold"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorAccent"/>
 
-            <EditText
-                android:id="@+id/editTextEditRecipeDuration"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""/>
+                        <EditText
+                            android:id="@+id/editTextEditRecipeName"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="textPersonName"
+                            android:background="@drawable/frame_regis"
+                            android:fontFamily="@font/regular"
+                            android:textSize="13sp"
+                            android:padding="10dp"
+                            android:textColor="#6A6A6A"/>
+                    </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Jumlah sajian"
-                android:layout_margin="5dp"
-                android:layout_marginTop="20dp"/>
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextEditRecipePortion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""
-                android:inputType="number"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Besar Kalori"
+                            android:fontFamily="@font/semibold"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorAccent"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Alat dan Bahan"
-                android:layout_marginTop="20dp"
-                android:layout_margin="5dp"/>
+                        <EditText
+                            android:id="@+id/editTextEditRecipeCalories"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="textPersonName"
+                            android:background="@drawable/frame_regis"
+                            android:fontFamily="@font/regular"
+                            android:textSize="13sp"
+                            android:padding="10dp"
+                            android:textColor="#6A6A6A"/>
+                    </LinearLayout>
 
-            <EditText
-                android:id="@+id/editTextEditRecipeMaterials"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:gravity="start|top"/>
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cara Masak"
-                android:layout_marginTop="20dp"
-                android:layout_margin="5dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Durasi Masak"
+                            android:fontFamily="@font/semibold"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorAccent"/>
 
-            <EditText
-                android:id="@+id/editTextEditRecipeProcedure"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:gravity="start|top"/>
+                        <EditText
+                            android:id="@+id/editTextEditRecipeDuration"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="number"
+                            android:background="@drawable/frame_regis"
+                            android:fontFamily="@font/regular"
+                            android:textSize="13sp"
+                            android:padding="10dp"
+                            android:textColor="#6A6A6A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jumlah Sajian"
+                            android:fontFamily="@font/semibold"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorAccent"/>
+
+                        <EditText
+                            android:id="@+id/editTextEditRecipePortion"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:inputType="number"
+                            android:background="@drawable/frame_regis"
+                            android:fontFamily="@font/regular"
+                            android:textSize="13sp"
+                            android:padding="10dp"
+                            android:textColor="#6A6A6A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Alat dan Bahan"
+                            android:fontFamily="@font/semibold"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorAccent"/>
+
+                        <EditText
+                            android:id="@+id/editTextEditRecipeMaterials"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:inputType="textMultiLine"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:background="@drawable/frame_regis"
+                            android:fontFamily="@font/regular"
+                            android:textSize="13sp"
+                            android:padding="10dp"
+                            android:textColor="#6A6A6A"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cara Memasak"
+                            android:fontFamily="@font/semibold"
+                            android:textSize="14sp"
+                            android:textColor="@color/colorAccent"/>
+
+                        <EditText
+                            android:id="@+id/editTextEditRecipeProcedure"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:inputType="textMultiLine"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:background="@drawable/frame_regis"
+                            android:fontFamily="@font/regular"
+                            android:textSize="13sp"
+                            android:padding="10dp"
+                            android:textColor="#6A6A6A"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/cirEditRecipeButton"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:backgroundTint="#ffc857"
+                        android:fontFamily="@font/g_bold"
+                        android:text="Edit"
+                        app:cornerRadius="20dp"
+                        app:rippleColor="#231414" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <!--        <EditText-->
             <!--            android:id="@+id/input_content"-->
@@ -170,11 +281,7 @@
             <!--            app:layout_constraintHorizontal_bias="0.0"-->
             <!--            app:layout_constraintStart_toStartOf="parent"-->
             <!--            app:layout_constraintTop_toBottomOf="@+id/input_title" />-->
-            <Button
-                android:id="@+id/cirEditRecipeButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+
         </LinearLayout>
 
     </ScrollView>

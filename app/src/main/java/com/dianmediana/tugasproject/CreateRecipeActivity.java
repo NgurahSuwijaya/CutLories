@@ -47,12 +47,12 @@ public class CreateRecipeActivity extends AppCompatActivity {
 
         db = new DbHelper(CreateRecipeActivity.this);
 
-        recipeName = findViewById(R.id.editTextEditRecipeName);
-        recipeCalories = findViewById(R.id.editTextEditRecipeCalories);
-        recipeDuration = findViewById(R.id.editTextEditRecipeDuration);
-        recipePortion = findViewById(R.id.editTextEditRecipePortion);
-        recipeMaterial = findViewById(R.id.editTextEditRecipeMaterials);
-        recipeProcedure = findViewById(R.id.editTextEditRecipeProcedure);
+        recipeName = findViewById(R.id.editTextCreateRecipeName);
+        recipeCalories = findViewById(R.id.editTextCreateRecipeCalories);
+        recipeDuration = findViewById(R.id.editTextCreateRecipeDuration);
+        recipePortion = findViewById(R.id.editTextCreateRecipePortion);
+        recipeMaterial = findViewById(R.id.editTextCreateRecipeMaterials);
+        recipeProcedure = findViewById(R.id.editTextCreateRecipeProcedure);
         btnCreate = findViewById(R.id.cirCreateRecipeButton);
 
         btnCreate.setOnClickListener(new View.OnClickListener() {
